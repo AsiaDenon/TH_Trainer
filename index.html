@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
 <!-- APP-VERSION: bei jeder inhaltlichen Änderung hier die Zahl hochzählen (z.B. v0.011 -> v0.012). Wird unten im 🌴-Tab angezeigt. -->
-<meta name="app-version" content="v0.011">
+<meta name="app-version" content="v0.012">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Thai Trainer</title>
@@ -112,7 +112,7 @@
   .counter-display { display: flex; flex-direction: column; align-items: center; }
   .counter-digits { display: flex; gap: 4px; justify-content: center; flex-wrap: wrap; }
   .counter-status-line.counter-status-line { min-height: 16px; margin-top: 18px; margin-bottom: 0; }
-  .digit-svg { width: 38px; height: 60px; }
+  .digit-svg { width: 30px; height: 48px; }
   .digit-seg { fill: var(--seg-off, #2a2a2a); transition: fill 0.15s; }
   .digit-seg.on { fill: var(--seg-on, #cf2b2b); }
   .digit-svg.digit-leading .digit-seg.on { fill: var(--seg-off, #2a2a2a); }
@@ -138,7 +138,7 @@
     #cardFront { font-size: 32px; }
     .vocab-pronun { display: none; }
     .btn { padding: 8px 14px; font-size: 13px; }
-    .digit-svg { width: 30px; height: 48px; }
+    .digit-svg { width: 24px; height: 38px; }
   }
 </style>
 </head>
@@ -396,7 +396,7 @@
     </div>
 
     <div class="dl-box">
-      <h3 id="gbTitle">📖 Gästebuch</h3>
+      <h3 id="gbTitle" style="text-align:center;">Gästebuch</h3>
       <div id="gbFormWrap">
         <input type="text" id="gbName" maxlength="60" placeholder="Dein Name">
         <textarea id="gbText" maxlength="300" rows="3" placeholder="Deine Nachricht (max. 300 Zeichen)" oninput="updateGbCharCount()"></textarea>
@@ -462,7 +462,7 @@ const I18N = {
     dlBtn1: "⬇ Jetzt Offline-Paket aktualisieren",
     dlTitle2: "📄 Nur CSV herunterladen", dlText2: "Exportiert deine aktuellen Vokabeln als CSV-Datei.", dlBtn2: "⬇ CSV exportieren",
     counterTitle: "Besucherzähler",
-    gbTitle: "📖 Gästebuch", gbNamePlaceholder: "Dein Name", gbTextPlaceholder: "Deine Nachricht (max. 300 Zeichen)",
+    gbTitle: "Gästebuch", gbNamePlaceholder: "Dein Name", gbTextPlaceholder: "Deine Nachricht (max. 300 Zeichen)",
     gbCheckLabel: 'Schreibe "Siam" um zu bestätigen, dass du kein Roboter bist:', gbSubmitBtn: "Eintragen",
     persistLabel: "💾 Persistent Storage:",
     apTitle: "📥 Offline-Version herunterladen",
@@ -516,7 +516,7 @@ const I18N = {
     dlBtn1: "⬇ Update offline package now",
     dlTitle2: "📄 Download CSV only", dlText2: "Exports your current vocabulary as a CSV file.", dlBtn2: "⬇ Export CSV",
     counterTitle: "Visitor Counter",
-    gbTitle: "📖 Guestbook", gbNamePlaceholder: "Your name", gbTextPlaceholder: "Your message (max. 300 characters)",
+    gbTitle: "Guestbook", gbNamePlaceholder: "Your name", gbTextPlaceholder: "Your message (max. 300 characters)",
     gbCheckLabel: 'Type "Siam" to confirm you\'re human:', gbSubmitBtn: "Submit",
     persistLabel: "💾 Persistent Storage:",
     apTitle: "📥 Download offline version",
@@ -1041,7 +1041,7 @@ function loadVisitorCounter() {
 
 // ── Gästebuch ──
 // Nach Einrichtung des Google Apps Script (siehe Anleitung) die Web-App-URL hier eintragen:
-const GUESTBOOK_URL = "GUESTBOOK_URL_PLACEHOLDER";
+const GUESTBOOK_URL = "https://script.google.com/macros/s/AKfycbxNZxp7vuXDtV4areyDVYNTuAx2K-ze1XjMEiQUBuE7GTzqQKdhbSDCtAoHaii99Vza/exec";
 let guestbookFetched = false;
 
 // Damerau-Levenshtein-Distanz für die Tippfehler-tolerante "Siam"-Prüfung
